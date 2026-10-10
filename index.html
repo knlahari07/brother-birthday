@@ -1,23 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffe0eb">
 <title>Happy Birthday Chidu Anna ❤️</title>
 
 <style>
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 20px;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     background: #fff5f8;
     color: #65263f;
     text-align: center;
@@ -25,165 +28,227 @@ body {
 }
 
 section {
-    padding: 55px 18px;
+    padding: 65px 18px;
+}
+
+h1 {
+    font-size: clamp(2.4rem, 7vw, 4.2rem);
+    color: #d6336c;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 5vw, 2.7rem);
+    color: #c2255c;
+    margin-bottom: 24px;
+}
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.9;
 }
 
 .hero {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 30px 20px;
+    justify-content: center;
+    padding: 35px 20px;
     background: linear-gradient(135deg, #ffe0eb, #ffc2d1, #fff0f5);
 }
 
-.heart {
-    font-size: 65px;
-    animation: beat 1.3s infinite;
-}
-
-h1 {
-    color: #d6336c;
-    font-size: clamp(34px, 7vw, 55px);
-    margin: 20px 0;
-}
-
-h2 {
-    color: #c2255c;
-    font-size: clamp(25px, 5vw, 36px);
-    margin-bottom: 25px;
-}
-
-p {
-    font-size: 17px;
-    line-height: 1.8;
+.big-heart {
+    font-size: 75px;
+    animation: heartbeat 1.5s infinite;
 }
 
 .hero p {
-    max-width: 650px;
+    max-width: 680px;
 }
 
 button {
-    background: #d6336c;
-    color: white;
     border: none;
     border-radius: 30px;
     padding: 14px 24px;
     margin: 15px 5px;
-    font-size: 16px;
+    background: #d6336c;
+    color: white;
+    font-size: 1rem;
     cursor: pointer;
+    box-shadow: 0 5px 15px #d6336c30;
+    transition: transform .2s, background .2s;
 }
 
 button:hover {
     background: #a61e4d;
+    transform: translateY(-2px);
+}
+
+button:focus-visible {
+    outline: 3px solid #65263f;
+    outline-offset: 4px;
 }
 
 .message-section {
     background: #fffafd;
 }
 
-.message-card {
-    max-width: 800px;
-    margin: auto;
+.card {
+    max-width: 850px;
+    margin: 0 auto;
     padding: 28px;
     background: white;
     border: 1px solid #ffd6e2;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px #d6336c15;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px #a61e4d12;
 }
 
-.message-card p {
+.card p {
     text-align: left;
     margin-bottom: 18px;
 }
 
 .gallery-section {
-    background: #ffeaf1;
+    background: linear-gradient(135deg, #fff0f5, #ffe0eb);
 }
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
-    max-width: 1000px;
-    margin: 25px auto;
+    max-width: 950px;
+    margin: 30px auto 0;
+}
+
+.photo-card {
+    background: white;
+    padding: 10px;
+    border-radius: 17px;
+    box-shadow: 0 5px 18px #a61e4d16;
 }
 
 .gallery img {
+    display: block;
     width: 100%;
-    height: 280px;
+    height: 300px;
     object-fit: contain;
-    background: white;
-    padding: 7px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px #a61e4d20;
+    border-radius: 10px;
+    background: #fffafd;
 }
 
-.song-box {
+.song-section {
+    background: #fffafd;
+}
+
+.song-card {
+    max-width: 650px;
+    margin: auto;
+    padding: 28px;
     background: white;
-    max-width: 600px;
-    margin: 25px auto;
-    padding: 25px;
-    border-radius: 20px;
+    border: 1px solid #ffd6e2;
+    border-radius: 22px;
 }
 
 audio {
+    display: block;
     width: 100%;
-    margin-top: 15px;
+    margin: 20px auto;
 }
 
-.surprise {
+.small-note {
+    font-size: .9rem;
+    color: #815064;
+}
+
+.surprise-section {
     background: linear-gradient(135deg, #ffe0eb, #fff5f8);
 }
 
-#surpriseMessage {
+.hidden-message {
     display: none;
-    max-width: 700px;
+    max-width: 750px;
     margin: 25px auto;
     padding: 25px;
     background: white;
-    border-radius: 20px;
-    font-size: 21px;
-    line-height: 1.8;
+    border: 1px solid #ffd6e2;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px #a61e4d15;
+    line-height: 1.9;
+    font-size: 1.08rem;
+}
+
+.hidden-message p {
+    margin-bottom: 15px;
+}
+
+.final-section {
+    background: linear-gradient(160deg, #fff0f5, #ffc2d1);
+}
+
+.final-card {
+    max-width: 850px;
+    margin: auto;
+    padding: 30px;
+    background: #ffffffed;
+    border-radius: 24px;
+    border: 1px solid #ffc2d1;
+    box-shadow: 0 8px 30px #a61e4d18;
+}
+
+.final-card p {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.final-signature {
+    color: #c2255c;
+    text-align: center !important;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 footer {
-    padding: 25px;
-    background: #d6336c;
+    background: #c2255c;
     color: white;
+    padding: 25px 15px;
+    line-height: 1.9;
 }
 
 .floating-heart {
     position: fixed;
-    bottom: -30px;
-    animation: floatUp 4s linear forwards;
+    bottom: -40px;
     pointer-events: none;
-    z-index: 100;
+    z-index: 1000;
+    animation: float-up 4s linear forwards;
 }
 
-@keyframes beat {
-    50% { transform: scale(1.2); }
+@keyframes heartbeat {
+    50% { transform: scale(1.15); }
 }
 
-@keyframes floatUp {
+@keyframes float-up {
     to {
         transform: translateY(-110vh) rotate(25deg);
         opacity: 0;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+    section {
+        padding: 48px 15px;
+    }
+
     .gallery {
         grid-template-columns: 1fr;
     }
 
     .gallery img {
-        height: 300px;
+        height: 320px;
     }
 
-    .message-card {
-        padding: 20px;
+    .card, .song-card, .final-card {
+        padding: 21px;
     }
 }
 </style>
@@ -191,103 +256,365 @@ footer {
 
 <body>
 
-<section class="hero">
-    <div class="heart">❤️</div>
+<!-- BIRTHDAY INTRO -->
+<section class="hero" id="home">
+    <div class="big-heart">❤️</div>
 
     <h1>Happy Birthday, Chidu Anna!</h1>
 
     <p>
-        To the brother I didn't get by blood, but received by heart.
-        Today is all about celebrating YOU!
+        Today is all about you, the person who became my brother
+        not by blood, but by heart. You deserve all the happiness
+        in the world. 🫂💗
     </p>
 
-    <button onclick="openSurprise()">
+    <button type="button" onclick="openSurprise()">
         Open Your Birthday Surprise 🎁
     </button>
 
-    <p>Scroll down for your special birthday wishes 💗</p>
+    <p>Made with lots of love, just for you. 💖</p>
 </section>
 
+<!-- FIRST EMOTIONAL MESSAGE -->
 <section class="message-section" id="message">
     <h2>A Message From My Heart 💌</h2>
 
-    <div class="message-card">
-        <p>
-            Dear Chidu Anna ❤️,
-        </p>
+    <div class="card">
+        <p>Dear Chidu Anna ❤️,</p>
 
         <p>
             Happy Birthday to one of the most special people in my life!
-            You may not be my brother by blood, but the place you hold
-            in my heart is no less than that of a real brother.
-            You have treated me like your own sister, and that means
-            more to me than words can ever explain.
+            Life gave me many people, but giving me a brother like you
+            was one of its sweetest gifts. We may not share the same
+            blood, but we share a bond that is precious to me.
         </p>
 
         <p>
-            Thank you for caring for me, supporting me, making me smile,
-            and being someone I can call my own. I may fight with you,
-            tease you, annoy you, make you angry, and sometimes even
-            make you cry, but behind all that is a heart that cares
-            about you so much. Our little fights will never change
-            the love and respect I have for you.
+            Thank you for treating me like your own sister, for caring
+            about me, and for giving me a place in your life. You may
+            sometimes see me fighting with you, teasing you, annoying
+            you, making you angry, or even making you cry. But that is
+            also one of the ways I show how comfortable I am with you.
+            Behind all those little fights is a sister who cares for
+            you more than she can explain.
         </p>
 
         <p>
-            On your birthday, I wish you good health, happiness,
-            success, peace, and all the beautiful things life can offer.
-            May every dream you carry in your heart come true.
-            Whenever life becomes difficult, remember that you have
-            a sister who will always wish the best for you.
+            I hope this birthday brings you peace, good health,
+            happiness, success, and countless reasons to smile.
+            I hope your hard work brings beautiful results and
+            every dream you carry slowly becomes reality.
         </p>
 
         <p>
-            You are not just a friend or a brother by name.
-            You are my brother by heart, and I am truly grateful
-            that life brought you into mine.
+            Whatever happens in life, I hope you always remember
+            that you are important to me. I am so grateful that
+            our paths crossed and that I got to call you my Anna.
         </p>
 
         <p>
-            Happy Birthday once again, Chidu Anna!
-            Stay happy, stay healthy, keep smiling, and never forget
-            how special you are to me. 🫂❤️
-        </p>
-
-        <p>
-            With lots of love,<br>
-            Your little sister forever 💗
+            Happy Birthday, Chidu Anna! Keep smiling, keep shining,
+            and never stop being the wonderful person you are. ❤️
         </p>
     </div>
 </section>
 
+<!-- EXACTLY SIX ORIGINAL PHOTOS -->
 <section class="gallery-section" id="gallery">
     <h2>Our Beautiful Memories 📸</h2>
 
-    <p>Every picture holds a memory that I will always treasure. ❤️</p>
+    <p>Six pictures, countless feelings, and memories I treasure. 💗</p>
 
     <div class="gallery">
-        <img src="./1787974104652.jpg"
-             alt="Beautiful memory 1">
+        <div class="photo-card">
+            <img src="./1787974104652.jpg"
+                 alt="Our memory 1">
+        </div>
 
-        <img src="./IMG-20260215-WA0017.jpg"
-             alt="Beautiful memory 2">
+        <div class="photo-card">
+            <img src="./IMG-20260215-WA0017.jpg"
+                 alt="Our memory 2">
+        </div>
 
-        <img src="./IMG_20260828_195236.jpg"
-             alt="Beautiful memory 3">
+        <div class="photo-card">
+            <img src="./IMG_20260828_195236.jpg"
+                 alt="Our memory 3">
+        </div>
 
-        <img src="./IMG_20260829_135712.png"
-             alt="Beautiful memory 4">
+        <div class="photo-card">
+            <img src="./IMG_20260829_135712.png"
+                 alt="Our memory 4">
+        </div>
 
-        <img src="./IMG_20261008_115047.png"
-             alt="Beautiful memory 5">
+        <div class="photo-card">
+            <img src="./IMG_20261008_115047.png"
+                 alt="Our memory 5">
+        </div>
 
-        <img src="./file_00000000cd548211af074169904a5c77.png"
-             alt="Beautiful memory 6">
+        <div class="photo-card">
+            <img src="./file_00000000cd548211af074169904a5c77.png"
+                 alt="Our memory 6">
+        </div>
     </div>
 </section>
 
-<section>
+<!-- BIRTHDAY SONG -->
+<section class="song-section" id="song">
     <h2>A Little Birthday Music 🎵</h2>
 
-    <div class="song-box">
-        <p>Play this song and enjoy your special day! ❤️</
+    <div class="song-card">
+        <p>
+            Anna, take a little break, play the song, and enjoy
+            your special day. This moment is just for you. ❤️
+        </p>
+
+        <audio id="birthdayAudio"
+               controls
+               loop
+               preload="auto">
+            <source src="./song.mp3" type="audio/mpeg">
+            Your browser does not support audio playback.
+        </audio>
+
+        <p id="songStatus" class="small-note" aria-live="polite">
+            Tap Play to listen to your birthday song. 🎶
+        </p>
+    </div>
+</section>
+
+<!-- FIRST SURPRISE BUTTON -->
+<section class="surprise-section" id="surprise">
+    <h2>Ready for One More Surprise? 🎁</h2>
+
+    <p>Anna, there is something else I want you to read. ❤️</p>
+
+    <button type="button" onclick="showBirthdayWish()">
+        Reveal Your Special Wish 💖
+    </button>
+
+    <div id="surpriseMessage"
+         class="hidden-message"
+         aria-live="polite">
+        <h2>My Wish for You 🎂</h2>
+
+        <p>
+            I wish that you never lose the smile that makes your
+            world brighter. I wish you strength on difficult days,
+            peace when your mind feels tired, and happiness that
+            stays even after the celebrations are over.
+        </p>
+
+        <p>
+            May life give you countless reasons to be proud of
+            yourself. May your dreams come true one by one.
+            And may you always remember that someone out here
+            is wishing the very best for you.
+        </p>
+
+        <p>
+            Happy Birthday, my Chidu Anna! You are loved more
+            than these words can ever express. ❤️🫂
+        </p>
+
+        <button type="button" onclick="goToFinalMessage()">
+            Read My Last Message to You 💌
+        </button>
+    </div>
+</section>
+
+<!-- LONG EMOTIONAL ENDING: THE LAST MAIN SECTION -->
+<section class="final-section" id="finalMessage">
+    <h2>To My Brother by Heart, Chidu Anna ❤️</h2>
+
+    <div class="final-card">
+        <p>Dear Anna,</p>
+
+        <p>
+            As you celebrate another year of your life, there is
+            something I want you to know from the bottom of my heart.
+            You may not be my brother by blood, but the place you
+            have in my life is real, meaningful, and irreplaceable.
+            Sometimes life brings someone into our world unexpectedly,
+            and without even realizing it, that person becomes family.
+            That is what you have become to me.
+        </p>
+
+        <p>
+            You are the brother I can tease, argue with, annoy,
+            and sometimes make angry. We may have our little fights,
+            misunderstandings, and moments when we make each other
+            upset. But I hope you never mistake those moments for
+            a lack of love. Even when I annoy you, I still care.
+            Even when we fight, I still wish the best for you.
+            And even when I don't know how to express my feelings,
+            you remain someone very special to me.
+        </p>
+
+        <p>
+            Thank you for treating me like your own sister.
+            Thank you for being a part of my life and for giving
+            me memories that I can look back on with a smile.
+            I may not always say thank you, and I may not always
+            show my feelings in the perfect way, but I truly
+            appreciate the bond we share.
+        </p>
+
+        <p>
+            On your birthday, I wish you much more than gifts,
+            cake, and celebration. I wish you a peaceful heart,
+            a healthy life, courage during hard times, and success
+            in everything you work towards. I wish that your efforts
+            are rewarded, your dreams find a way to come true,
+            and the days ahead bring you more happiness than
+            you ever expected.
+        </p>
+
+        <p>
+            If you ever have a difficult day, I hope you remember
+            that you do not have to be strong every second.
+            You deserve care too. You deserve to be appreciated,
+            supported, and reminded that your life matters.
+            I hope you keep moving forward with courage, even
+            when things don't happen the way you planned.
+        </p>
+
+        <p>
+            I cannot promise that we will never fight or that
+            everything between us will always be perfect. But I
+            can tell you this: I will always be grateful that I
+            got to know you and that I can call you my brother
+            by heart. I hope that no matter how busy life becomes,
+            we continue to share our laughter, silly arguments,
+            memories, and the little moments that make our bond ours.
+        </p>
+
+        <p>
+            Please take care of yourself, Anna. Keep smiling.
+            Never think that you are ordinary, because the place
+            you hold in my heart is special. I hope this new year
+            of your life brings you new opportunities, wonderful
+            memories, genuine happiness, and people who value you
+            for the person you are.
+        </p>
+
+        <p>
+            Maybe I am not your sister by birth, but I am happy
+            to be your sister by heart. And if I could give you
+            one birthday gift that would last forever, it would
+            be the certainty that you are appreciated, respected,
+            and cared for.
+        </p>
+
+        <p>
+            Happy Birthday once again, Chidu Anna! May your life
+            be filled with love, laughter, health, success, and
+            beautiful surprises. Whatever this new year brings,
+            I hope you face it with a smile and a hopeful heart.
+            Thank you for being you, and thank you for being
+            my brother in this beautiful, unexpected way.
+        </p>
+
+        <p class="final-signature">
+            You are my brother not by blood, but by heart —
+            today, tomorrow, and always. ❤️🫂
+        </p>
+
+        <p class="final-signature">
+            With all my love,<br>
+            Your little sister, forever. 💗
+        </p>
+
+        <button type="button" onclick="sendHearts()">
+            One Last Hug from Me 🫂❤️
+        </button>
+    </div>
+</section>
+
+<footer>
+    Made with endless love for Chidu Anna ❤️<br>
+    Forever your little sister. 🫂
+</footer>
+
+<script>
+"use strict";
+
+function createHearts() {
+    const symbols = ["❤️", "💗", "💕", "💖", "🩷"];
+
+    for (let i = 0; i < 18; i++) {
+        const heart = document.createElement("span");
+
+        heart.className = "floating-heart";
+        heart.textContent =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (18 + Math.random() * 22) + "px";
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+        document.body.appendChild(heart);
+
+        window.setTimeout(function () {
+            heart.remove();
+        }, 6500);
+    }
+}
+
+function openSurprise() {
+    createHearts();
+
+    document.getElementById("message").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+function showBirthdayWish() {
+    const message = document.getElementById("surpriseMessage");
+
+    message.style.display = "block";
+
+    createHearts();
+
+    message.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+
+function goToFinalMessage() {
+    document.getElementById("finalMessage").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    createHearts();
+}
+
+function sendHearts() {
+    createHearts();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const audio = document.getElementById("birthdayAudio");
+    const status = document.getElementById("songStatus");
+
+    audio.addEventListener("error", function () {
+        status.textContent =
+            "The song could not load. Check that song.mp3 is uploaded beside index.html and is a valid MP3 file.";
+    });
+
+    audio.addEventListener("playing", function () {
+        status.textContent = "Your birthday song is playing. Enjoy, Anna! ❤️🎶";
+    });
+
+    audio.addEventListener("pause", function () {
+        if (audio.currentTime > 0 && !audio.ended) {
+            status.textContent = "Song paused. Tap Play whenever you like. 🎵";
+        }
+    });
+});
+</script>
+
+</body>
+</html>

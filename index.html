@@ -14,32 +14,35 @@
 }
 
 body {
-    font-family: 'Georgia', serif;
-    background: linear-gradient(135deg, #ffdde1, #ee9ca7, #ffd1dc);
-    color: #7a1636;
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #ffe0e9, #ffc2d1, #fff0f5);
+    color: #781638;
     text-align: center;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 .container {
     width: 92%;
     max-width: 750px;
-    margin: 30px auto;
+    margin: 25px auto;
     padding: 28px 20px;
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.92);
     border-radius: 25px;
     box-shadow: 0 8px 25px rgba(120, 20, 50, 0.2);
+    position: relative;
+    z-index: 1;
 }
 
 h1 {
-    font-size: clamp(30px, 7vw, 48px);
     color: #d4145a;
-    margin-bottom: 15px;
+    font-size: clamp(30px, 7vw, 48px);
+    margin: 15px 0;
 }
 
 h2 {
     color: #c2185b;
-    margin: 25px 0 12px;
+    margin: 25px 0 15px;
 }
 
 p {
@@ -49,7 +52,7 @@ p {
 }
 
 .heart {
-    font-size: 40px;
+    font-size: 42px;
     animation: heartbeat 1s infinite;
 }
 
@@ -69,27 +72,55 @@ p {
 }
 
 .photo-frame img {
-    display: block;
     width: 100%;
+    display: block;
     border-radius: 12px;
 }
 
 .caption {
-    font-size: 15px;
     font-style: italic;
-    margin-top: 12px;
+    font-size: 15px;
+}
+
+.music-box {
+    margin: 25px 0;
+    padding: 18px;
+    background: #fff0f5;
+    border-radius: 20px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    margin: 20px auto;
+    background: #f7d5e0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
 }
 
 button {
     background: #d4145a;
     color: white;
     border: none;
-    padding: 13px 23px;
-    margin: 10px 5px;
+    padding: 13px 24px;
+    margin: 12px 5px;
     border-radius: 30px;
     font-size: 16px;
     cursor: pointer;
     box-shadow: 0 4px 10px #e8a1b5;
+    transition: 0.3s;
 }
 
 button:hover {
@@ -102,48 +133,54 @@ button:hover {
     margin-top: 20px;
     padding: 20px;
     background: #fff0f5;
-    border-radius: 15px;
+    border: 2px solid #f3a6bd;
+    border-radius: 18px;
     line-height: 1.8;
+}
+
+.message-box.show {
+    display: block;
     animation: fadeIn 1s;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.music-box {
-    margin: 25px auto;
-    padding: 18px;
-    background: #fff0f5;
-    border-radius: 18px;
-}
-
-.music-box p {
-    font-size: 15px;
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 footer {
     padding: 20px;
-    font-size: 14px;
+    color: #9b1747;
+    font-size: 15px;
+    position: relative;
+    z-index: 1;
 }
 
 .floating-heart {
     position: fixed;
-    bottom: -30px;
+    bottom: -40px;
     font-size: 24px;
-    animation: floatUp 7s linear infinite;
+    animation: floatUp 7s linear forwards;
     pointer-events: none;
-    z-index: 10;
+    z-index: 0;
 }
 
 @keyframes floatUp {
-    from {
-        transform: translateY(0);
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
         opacity: 1;
     }
-    to {
-        transform: translateY(-110vh);
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
     }
 }
@@ -157,6 +194,10 @@ footer {
     p {
         font-size: 16px;
     }
+
+    button {
+        font-size: 15px;
+    }
 }
 </style>
 </head>
@@ -167,15 +208,16 @@ footer {
 
     <div class="heart">❤️</div>
 
-    <h1>Happy Birthday Chidu Anna!</h1>
+    <h1>Happy Birthday Chidu Anna! 🎂</h1>
 
     <p>
         To my favourite person, my non-blood brother,
-        and one of the most special people in my life.
+        and one of the most special people in my life. ❤️
     </p>
 
     <div class="photo-frame">
-        <!-- Replace brother.jpg with your actual photo filename -->
+
+        <!-- Upload your photo as brother.jpg to show it here -->
         <img
             src="brother.jpg"
             alt="A special memory with Chidu Anna"
@@ -183,81 +225,117 @@ footer {
         >
 
         <p class="caption">
-            Not related by blood, but connected by heart. ❤️
+            Not connected by blood, but connected by heart. 🫂
         </p>
+
     </div>
 
-    <h2>💖 A Little Message for You 💖</h2>
+    <h2>💖 To My Special Brother 💖</h2>
 
     <p>
-        Anna, you came into my life as a friend, but you became
-        someone I can proudly call my brother. You have given me
-        the feeling of having someone who cares for me like family.
-        No matter how much I fight with you, tease you, or make you
-        angry, you will always hold a special place in my heart.
+        Chidu Anna, you came into my life as a friend,
+        but slowly you became someone I could proudly call
+        my own brother. You may not be related to me by blood,
+        but the bond we share means so much to me.
     </p>
 
     <p>
-        I may not always express how much you mean to me, but I hope
-        you know that your happiness matters to me. I wish you endless
-        smiles, good health, success, peace, and all the beautiful
-        things you deserve.
+        You are someone I can tease, fight with, annoy,
+        and sometimes make angry, but at the end of the day,
+        you will always have a special place in my heart.
+        Even our little fights and silly arguments become
+        memories that I will always treasure.
     </p>
 
     <p>
-        Happy Birthday, Chidu Anna! You will always be my special
-        brother, and I will always be grateful that life brought
-        you into my world. 🫂❤️
+        On your birthday, I wish you endless happiness,
+        good health, success, peace, and countless reasons
+        to smile. May every dream you carry in your heart
+        slowly become a beautiful reality.
     </p>
+
+    <p>
+        No matter where life takes us, I hope our bond
+        always stays strong. Thank you for being a special
+        part of my life. I am truly lucky to have a brother
+        like you. ❤️
+    </p>
+
+    <h2>🎵 A Song Dedicated to You 🎵</h2>
 
     <div class="music-box">
-        <h2>🎵 A Song Just for You 🎵</h2>
 
         <p>
-            Some feelings are better expressed through music.
-            This song is dedicated to you, Chidu Anna. ❤️
+            Some feelings are difficult to explain in words,
+            so this song is a little dedication from my heart
+            to you, Chidu Anna. ❤️🎶
         </p>
 
-        <audio id="birthdaySong" loop preload="metadata">
-            <source src="song.mp3" type="audio/mpeg">
-            Your browser does not support audio playback.
-        </audio>
+        <div class="video-container">
 
-        <button onclick="toggleMusic()" id="musicButton">
-            🎶 Play Nin Edurali Nanu
-        </button>
+            <iframe
+                src="https://www.youtube.com/embed/GYdVZ83P2lI"
+                title="Nin Edurali Naanu - Roberrt"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
 
-        <p id="musicStatus">
-            Tap the button to play our special song.
+        </div>
+
+        <p>
+            Play the song and enjoy your special day! 💗
         </p>
+
     </div>
 
     <h2>🎁 One More Surprise 🎁</h2>
 
     <p>
-        There is one more little message waiting for you.
+        Anna, there is one more little message waiting for you.
+        Tap below to open your surprise. 🥹❤️
     </p>
 
     <button onclick="showMessage()">
-        Open Your Surprise ❤️
+        Open Your Surprise 💌
     </button>
 
     <div class="message-box" id="surpriseMessage">
-        <h2>Dear Chidu Anna 🫂</h2>
+
+        <h2>Dear Chidu Anna 🫂❤️</h2>
 
         <p>
-            You are not my brother by blood, but you are my brother
-            by heart. I hope we continue to fight, laugh, tease each
-            other, and create beautiful memories for many more years.
+            You are not my brother by blood, but you are
+            my brother by heart. That is what makes our
+            relationship so special to me.
         </p>
 
         <p>
-            Whatever happens in life, I will always wish the best
-            for you. Keep smiling, keep shining, and never forget
-            how special you are to me.
+            I want us to keep laughing, teasing each other,
+            fighting over silly things, making up, and
+            creating beautiful memories for many more years.
         </p>
 
-        <h2>Happy Birthday, Anna! ❤️🎂</h2>
+        <p>
+            I may annoy you sometimes, make you angry,
+            or trouble you with my silly behaviour, but
+            behind all that is a sister who genuinely
+            cares about you and wants to see you happy.
+        </p>
+
+        <p>
+            Whenever life gets difficult, I hope you remember
+            how much you matter to the people who care about you.
+            You deserve happiness, peace, and all the good
+            things life has to offer.
+        </p>
+
+        <h2>Happy Birthday, Chidu Anna! 🎂❤️</h2>
+
+        <p>
+            Forever your little sister. 🩷🫂
+        </p>
+
     </div>
 
     <div class="heart">💗</div>
@@ -265,63 +343,44 @@ footer {
 </div>
 
 <footer>
-    Made with lots of love for Chidu Anna ❤️
+    Made with endless love for Chidu Anna ❤️
     <br>
-    Forever your little sister. 🫂
+    A special birthday surprise from your little sister. 🫂
 </footer>
 
 <script>
-const song = document.getElementById("birthdaySong");
-const musicButton = document.getElementById("musicButton");
-const musicStatus = document.getElementById("musicStatus");
-
-async function toggleMusic() {
-    if (song.paused) {
-        try {
-            await song.play();
-
-            musicButton.textContent = "⏸ Pause Song";
-            musicStatus.textContent =
-                "Enjoy your special song, Chidu Anna! ❤️🎶";
-        } catch (error) {
-            musicStatus.textContent =
-                "Song could not play. Please check that song.mp3 " +
-                "is uploaded in the same folder as index.html.";
-        }
-    } else {
-        song.pause();
-        musicButton.textContent = "🎶 Play Nin Edurali Nanu";
-        musicStatus.textContent = "Song paused. Tap to play again. ❤️";
-    }
-}
-
 function showMessage() {
     const message = document.getElementById("surpriseMessage");
 
-    if (message.style.display === "block") {
-        message.style.display = "none";
-    } else {
-        message.style.display = "block";
+    message.classList.toggle("show");
+
+    if (message.classList.contains("show")) {
+        message.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
     }
 }
 
-// Floating hearts
+// Floating hearts animation
 function createHeart() {
     const heart = document.createElement("div");
 
     heart.className = "floating-heart";
-    heart.textContent = ["❤️", "💕", "💗", "💖", "🩷"][
-        Math.floor(Math.random() * 5)
+
+    const hearts = ["❤️", "💕", "💗", "💖", "🩷"];
+    heart.textContent = hearts[
+        Math.floor(Math.random() * hearts.length)
     ];
 
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+    heart.style.animationDuration = (5 + Math.random() * 4) + "s";
 
     document.body.appendChild(heart);
 
-    setTimeout(() => {
+    setTimeout(function() {
         heart.remove();
-    }, 8000);
+    }, 9000);
 }
 
 setInterval(createHeart, 700);

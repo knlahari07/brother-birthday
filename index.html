@@ -46,6 +46,24 @@ p {
     font-size: 1.05rem;
 }
 
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 14px 25px;
+    background: #d6336c;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 12px 5px;
+    box-shadow: 0 5px 15px rgba(180, 30, 85, 0.2);
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #a61e4d;
+    transform: translateY(-3px);
+}
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -58,36 +76,18 @@ p {
 
 .hero .emoji {
     font-size: 4rem;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     animation: heartbeat 1.5s infinite;
 }
 
 .hero p {
     max-width: 650px;
-    margin-bottom: 20px;
+    margin: 10px auto;
 }
 
 .subtitle {
     font-size: 1.2rem;
     color: #8a284b;
-}
-
-button {
-    border: none;
-    border-radius: 30px;
-    padding: 14px 27px;
-    background: #d6336c;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    margin: 10px;
-    transition: transform 0.2s, background 0.2s;
-    box-shadow: 0 5px 15px rgba(180, 30, 85, 0.2);
-}
-
-button:hover {
-    background: #a61e4d;
-    transform: translateY(-3px);
 }
 
 .message-section {
@@ -105,7 +105,7 @@ button:hover {
 }
 
 .message-card p {
-    margin-bottom: 15px;
+    margin-bottom: 17px;
     text-align: left;
 }
 
@@ -113,337 +113,4 @@ button:hover {
     background: linear-gradient(135deg, #fff0f5, #ffe0eb);
 }
 
-.gallery-intro {
-    margin: 0 auto 30px;
-    max-width: 650px;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-    max-width: 1050px;
-    margin: 0 auto;
-}
-
-.photo-card {
-    background: white;
-    border-radius: 20px;
-    padding: 12px;
-    box-shadow: 0 7px 22px rgba(150, 40, 80, 0.12);
-    overflow: hidden;
-}
-
-.photo-card img {
-    display: block;
-    width: 100%;
-    height: 350px;
-    object-fit: contain;
-    object-position: center;
-    background: #fff7fa;
-    border-radius: 14px;
-}
-
-.photo-caption {
-    padding: 13px 5px 5px;
-    color: #b02558;
-    font-weight: 600;
-}
-
-.song-section {
-    background: linear-gradient(135deg, #ffe0e9, #ffc2d1);
-}
-
-.song-card {
-    width: 100%;
-    max-width: 650px;
-    margin: auto;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 30px 22px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-}
-
-.song-icon {
-    font-size: 4rem;
-    margin-bottom: 12px;
-}
-
-.song-card p {
-    margin-bottom: 12px;
-}
-
-audio {
-    display: block;
-    width: 100%;
-    margin: 25px auto 10px;
-}
-
-.song-note {
-    font-size: 0.9rem;
-    color: #7a2948;
-}
-
-.cake-section {
-    background: #fffafd;
-}
-
-.cake {
-    font-size: 6rem;
-    margin: 15px 0;
-    animation: heartbeat 1.5s infinite;
-}
-
-.surprise-message {
-    display: none;
-    max-width: 700px;
-    margin: 25px auto 0;
-    padding: 25px;
-    border-radius: 22px;
-    background: #fff0f5;
-    border: 2px dashed #e64980;
-}
-
-.surprise-message p {
-    margin-bottom: 12px;
-}
-
-.final-section {
-    background: linear-gradient(135deg, #c2255c, #e64980);
-    color: white;
-}
-
-.final-section h2 {
-    color: white;
-}
-
-.final-section p {
-    max-width: 700px;
-    margin: 0 auto 15px;
-}
-
-.footer {
-    background: #861843;
-    color: white;
-    padding: 22px 15px;
-}
-
-.footer p {
-    font-size: 0.9rem;
-}
-
-.heart {
-    position: fixed;
-    bottom: -30px;
-    z-index: 5;
-    pointer-events: none;
-    animation: floatUp linear forwards;
-}
-
-.confetti {
-    position: fixed;
-    top: -20px;
-    z-index: 10;
-    pointer-events: none;
-    animation: fall linear forwards;
-}
-
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.08);
-    }
-}
-
-@keyframes floatUp {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(720deg);
-        opacity: 0;
-    }
-}
-
-@media (max-width: 600px) {
-    section {
-        padding: 45px 14px;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .photo-card img {
-        height: auto;
-        max-height: 480px;
-        min-height: 200px;
-    }
-
-    .message-card {
-        padding: 22px 18px;
-    }
-
-    .song-card {
-        padding: 25px 16px;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<!-- BIRTHDAY INTRODUCTION -->
-<section class="hero" id="home">
-
-    <div class="emoji">🎂❤️🎉</div>
-
-    <h1>Happy Birthday, Chidu Anna!</h1>
-
-    <p class="subtitle">
-        To the person who is not my brother by blood,
-        but is my brother by heart. 🥹❤️
-    </p>
-
-    <p>
-        Today is all about you, Anna!
-        You deserve all the happiness, love, success,
-        and beautiful moments in this world.
-    </p>
-
-    <button onclick="startSurprise()">
-        Open Your Surprise ❤️
-    </button>
-
-</section>
-
-
-<!-- HEARTFELT MESSAGE -->
-<section class="message-section" id="message">
-
-    <h2>Something From My Heart 💌</h2>
-
-    <div class="message-card">
-
-        <p>
-            Dear Chidu Anna ❤️,
-        </p>
-
-        <p>
-            You may not be my brother by blood, but the place
-            you have in my heart is just as special as a real
-            brother's. Sometimes, relationships are not made
-            by blood. They are made by love, care, trust, and
-            the way someone makes us feel safe and important.
-        </p>
-
-        <p>
-            Thank you for treating me like your own little sister.
-            It means more to me than I can explain. I may irritate
-            you, tease you, fight with you, make you angry, and
-            sometimes even make you cry, but behind all that,
-            you will always be someone very special to me. 🥹
-        </p>
-
-        <p>
-            I don't need a perfect brother. I am happy to have
-            someone like you, who has given me a beautiful
-            relationship that I will always treasure.
-        </p>
-
-        <p>
-            On your birthday, I pray that all your dreams come
-            true, that you always stay healthy and happy, and
-            that life gives you every good thing you deserve.
-            Whenever life gets difficult, remember that your
-            little sister is always cheering for you. ❤️
-        </p>
-
-        <p>
-            No matter how much we fight or tease each other,
-            you will always be my Chidu Anna.
-            Our bond is special, and I will always be grateful
-            to have you in my life.
-        </p>
-
-        <p>
-            <strong>
-                Happy Birthday once again, Anna!
-                Lots of love from your little sister. ❤️🫂
-            </strong>
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- SIX PHOTOS -->
-<section class="gallery-section" id="memories">
-
-    <h2>Our Beautiful Memories 📸❤️</h2>
-
-    <p class="gallery-intro">
-        Every photo holds a memory, and every memory
-        is a little piece of happiness. These moments
-        will always be special to me. 🥹❤️
-    </p>
-
-    <div class="gallery">
-
-        <div class="photo-card">
-            <img
-                src="1787974104652.jpg"
-                alt="A special memory with Chidu Anna"
-                loading="eager"
-                onerror="this.alt='Photo could not load. Check the filename in GitHub.'"
-            >
-            <p class="photo-caption">A special memory ❤️</p>
-        </div>
-
-        <div class="photo-card">
-            <img
-                src="IMG-20260215-WA0017.jpg"
-                alt="A beautiful memory"
-                loading="eager"
-                onerror="this.alt='Photo could not load. Check the filename in GitHub.'"
-            >
-            <p class="photo-caption">Memories to treasure 🫂</p>
-        </div>
-
-        <div class="photo-card">
-            <img
-                src="IMG_20260828_195236.jpg"
-                alt="A happy moment together"
-                loading="lazy"
-                onerror="this.alt='Photo could not load. Check the filename in GitHub.'"
-            >
-            <p class="photo-caption">A moment to remember 💗</p>
-        </div>
-
-        <div class="photo-card">
-            <img
-                src="IMG_20260829_135712.png"
-                alt="A lovely memory"
-                loading="lazy"
-                onerror="this.alt='Photo could not load. Check the filename in GitHub.'"
-            >
-            <p class
+.gallery

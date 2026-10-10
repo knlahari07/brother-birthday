@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Happy Birthday Chidu Anna ❤️</title>
 
 <style>
@@ -27,7 +27,7 @@ body {
 
 section {
     min-height: 100vh;
-    padding: 70px 20px;
+    padding: 60px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,26 +71,6 @@ button:hover {
     transform: scale(1.05);
 }
 
-.heart {
-    position: fixed;
-    bottom: -30px;
-    font-size: 25px;
-    animation: float 6s linear infinite;
-    pointer-events: none;
-    z-index: 1;
-}
-
-@keyframes float {
-    from {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateY(-110vh);
-        opacity: 0;
-    }
-}
-
 /* Photo gallery */
 
 .gallery {
@@ -104,286 +84,97 @@ button:hover {
 
 .photo {
     height: 220px;
-    background: rgba(255,255,255,0.6);
     border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
+    background: white;
 }
 
 .photo img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: 20px;
-    background: white;
+    display: block;
 }
 
 /* Birthday message */
 
 .message {
-    background: rgba(255,255,255,0.65);
+    background: rgba(255,255,255,0.75);
     padding: 30px;
     border-radius: 25px;
     max-width: 800px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* Cake */
+/* Birthday cake */
 
 .cake {
     font-size: 120px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.3s;
 }
 
 .cake:hover {
     transform: scale(1.1);
 }
 
+/* Song section */
+
+.song-section {
+    background: linear-gradient(135deg, #ffe0e9, #ffc2d1);
+}
+
+.song-card {
+    width: 100%;
+    max-width: 600px;
+    padding: 25px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.song-card iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+/* Final message */
+
 .final {
     background: #2b1020;
     color: white;
 }
 
+/* Floating hearts */
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    font-size: 25px;
+    pointer-events: none;
+    z-index: 2;
+    animation: floatUp 6s linear forwards;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
 @media (max-width: 600px) {
     section {
-        padding: 50px 15px;
+        padding: 45px 15px;
     }
 
     .gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-
-    .photo {
-        height: 160px;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    .message {
-        padding: 22px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-
-<section class="hero">
-    <div style="font-size:60px;">🎁</div>
-
-    <h1>Happy Birthday<br>Chidu Anna ❤️</h1>
-
-    <p>
-        A small surprise from your annoying little sister,
-        Lahari 😌😂
-    </p>
-
-    <button onclick="startSurprise()">
-        Open Your Surprise 🎁
-    </button>
-</section>
-
-<!-- MESSAGE -->
-
-<section id="birthdayMessage">
-    <h2>Dear Chidu Anna ❤️</h2>
-
-    <div class="message">
-        <p>
-            You may not be my brother by blood,
-            but you have always treated me like your own sister.
-            And honestly, that means more to me than I can explain. ❤️
-        </p>
-
-        <br>
-
-        <p>
-            Thank you for being there for me, supporting me,
-            caring about me and tolerating all my drama. 😂
-        </p>
-
-        <br>
-
-        <p>
-            Sometimes I make you angry,
-            sometimes I make you cry,
-            sometimes I irritate you for absolutely no reason...
-            but that's basically my sister duty. 😌😂
-        </p>
-
-        <br>
-
-        <p>
-            No matter how much we fight or argue,
-            you'll always be my Chidu Anna.
-            I'm really lucky to have you in my life. ❤️
-        </p>
-    </div>
-</section>
-
-<!-- GALLERY -->
-
-<section>
-    <h2>Our Memories 📸❤️</h2>
-
-    <p>Some moments I'll always keep close to my heart.</p>
-
-    <div class="gallery">
-        <div class="photo">
-            <img src="1787974104652.jpg" alt="Memory 1">
-        </div>
-
-        <div class="photo">
-            <img src="IMG-20260215-WA0017.jpg" alt="Memory 2">
-        </div>
-
-        <div class="photo">
-            <img src="IMG_20260828_195236.jpg" alt="Memory 3">
-        </div>
-
-        <div class="photo">
-            <img src="IMG_20260829_135712.png" alt="Memory 4">
-        </div>
-
-        <div class="photo">
-            <img src="IMG_20261008_115047.png" alt="Memory 5">
-        </div>
-
-        <div class="photo">
-            <img src="file_00000000cd548211af074169904a5c77.png" alt="Memory 6">
-        </div>
-    </div>
-
-    <p style="margin-top:20px;">
-        Every memory with you is special. ❤️
-    </p>
-</section>
-
-<!-- CAKE -->
-
-<section>
-    <h2>Make A Wish 🎂</h2>
-
-    <div class="cake" onclick="celebrate()">
-        🎂
-    </div>
-
-    <p>Tap the cake, Chidu Anna! 😂</p>
-
-    <button onclick="celebrate()">
-        Make a Wish ✨
-    </button>
-</section>
-
-<!-- FINAL MESSAGE -->
-
-<section class="final">
-    <div style="font-size:70px;">❤️</div>
-
-    <h1>Happy Birthday<br>Chidu Anna! 🎉</h1>
-
-    <p>
-        From your crazy, annoying,
-        sometimes sweet sister...
-    </p>
-
-    <br>
-
-    <h2>Lahari ❤️</h2>
-
-    <p>
-        I'll always be there to irritate you,
-        fight with you,
-        make you angry,
-        and love you like my own brother. 😂❤️
-    </p>
-</section>
-
-<script>
-/* Open the surprise */
-
-function startSurprise() {
-    celebrate();
-
-    document.getElementById("birthdayMessage").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-}
-
-/* Confetti animation */
-
-function celebrate() {
-    const emojis = ["🎉", "❤️", "✨", "🎊", "💖"];
-
-    for (let i = 0; i < 100; i++) {
-        const confetti = document.createElement("div");
-
-        confetti.textContent =
-            emojis[Math.floor(Math.random() * emojis.length)];
-
-        confetti.style.position = "fixed";
-        confetti.style.left = Math.random() * 100 + "vw";
-        confetti.style.top = "-30px";
-        confetti.style.fontSize = (15 + Math.random() * 25) + "px";
-        confetti.style.zIndex = "9999";
-        confetti.style.pointerEvents = "none";
-
-        document.body.appendChild(confetti);
-
-        const duration = 2 + Math.random() * 3;
-
-        confetti.animate(
-            [
-                {
-                    transform: "translateY(0) rotate(0deg)",
-                    opacity: 1
-                },
-                {
-                    transform: "translateY(110vh) rotate(720deg)",
-                    opacity: 0
-                }
-            ],
-            {
-                duration: duration * 1000,
-                easing: "linear"
-            }
-        );
-
-        setTimeout(() => {
-            confetti.remove();
-        }, duration * 1000);
-    }
-}
-
-/* Floating hearts */
-
-setInterval(() => {
-    const heart = document.createElement("div");
-
-    heart.className = "heart";
-    heart.textContent = ["❤️", "💕", "💖", "💗"][
-        Math.floor(Math.random() * 4)
-    ];
-
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 8000);
-}, 700);
-</script>
-
-</body>
-</html>
+        grid

@@ -8,179 +8,155 @@
 
 <style>
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: Georgia, serif;
-    background: linear-gradient(135deg, #ffe0e9, #ffc2d1, #fff0f5);
-    color: #781638;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #ffeef5, #ffc2dc);
+    color: #6a1745;
     text-align: center;
     overflow-x: hidden;
 }
 
 .container {
-    width: 92%;
-    max-width: 850px;
+    max-width: 900px;
     margin: 25px auto;
+    padding: 25px 15px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.94);
     padding: 25px 18px;
-    background: rgba(255,255,255,0.94);
     border-radius: 25px;
-    box-shadow: 0 8px 25px rgba(120,20,50,0.2);
-    position: relative;
-    z-index: 1;
+    box-shadow: 0 8px 25px rgba(180, 40, 100, 0.2);
 }
 
 h1 {
-    color: #d4145a;
-    font-size: clamp(30px, 7vw, 48px);
-    margin: 15px 0;
+    color: #e91e63;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
 }
 
-h2 {
-    color: #c2185b;
-    margin: 25px 0 15px;
-}
-
-p {
-    font-size: 16px;
-    line-height: 1.8;
-    margin: 15px 0;
+.subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.7;
 }
 
 .heart {
-    font-size: 40px;
-    animation: heartbeat 1s infinite;
+    font-size: 35px;
+    animation: beat 1s infinite;
+    margin: 10px;
 }
 
-@keyframes heartbeat {
+@keyframes beat {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.2); }
 }
 
-/* SIX-PHOTO GALLERY */
+h2 {
+    color: #d81b60;
+    margin: 25px 0 15px;
+}
+
+.message {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    text-align: left;
+    margin: 15px 0;
+}
 
 .gallery {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px;
-    margin: 25px 0;
+    gap: 14px;
+    margin-top: 20px;
 }
 
 .photo-card {
-    background: #fff0f5;
+    background: #fff0f6;
     padding: 8px;
-    border: 2px solid #f3a6bd;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(180,50,90,0.15);
-    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(150, 30, 80, 0.12);
 }
 
 .photo-card img {
-    display: block;
     width: 100%;
-    height: 220px;
+    height: 230px;
     object-fit: cover;
     border-radius: 10px;
+    display: block;
 }
 
-.photo-caption {
-    font-size: 14px;
-    font-style: italic;
-    margin: 10px 3px 5px;
+.caption {
+    padding: 10px 3px 5px;
+    font-size: 0.95rem;
+    font-weight: bold;
 }
 
-.music-box {
+.music-section {
+    background: #fff0f6;
     margin: 25px 0;
-    padding: 18px;
-    background: #fff0f5;
-    border-radius: 20px;
-}
-
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 15px;
-    margin: 20px auto;
-    background: #f7d5e0;
-}
-
-.video-container iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-button {
-    background: #d4145a;
-    color: white;
-    border: none;
-    padding: 13px 22px;
-    margin: 12px 5px;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px #e8a1b5;
-}
-
-button:hover {
-    background: #a30e43;
-}
-
-.message-box {
-    display: none;
-    margin-top: 20px;
-    padding: 20px;
-    background: #fff0f5;
-    border: 2px solid #f3a6bd;
+    padding: 20px 12px;
     border-radius: 18px;
 }
 
-.message-box.show {
-    display: block;
-    animation: fadeIn 1s;
+.music-section p {
+    line-height: 1.7;
+    margin-bottom: 15px;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.music-button, .surprise-button {
+    display: inline-block;
+    background: #e91e63;
+    color: white;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 8px;
+}
+
+.music-button:hover, .surprise-button:hover {
+    background: #ad1457;
+}
+
+#surprise {
+    display: none;
+    background: #fff0f6;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    line-height: 1.9;
+    font-size: 1.05rem;
 }
 
 footer {
-    padding: 20px;
-    color: #9b1747;
-    position: relative;
-    z-index: 1;
+    margin-top: 25px;
+    padding: 15px;
+    font-size: 0.95rem;
+    line-height: 1.8;
 }
 
 .floating-heart {
     position: fixed;
-    bottom: -40px;
-    font-size: 24px;
-    animation: floatUp 7s linear forwards;
+    bottom: -30px;
+    animation: floatUp 6s linear forwards;
     pointer-events: none;
-    z-index: 0;
+    z-index: 10;
 }
 
 @keyframes floatUp {
     0% {
         transform: translateY(0) rotate(0deg);
-        opacity: 0;
+        opacity: 1;
     }
-    15% { opacity: 1; }
     100% {
         transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
@@ -189,27 +165,24 @@ footer {
 
 @media (max-width: 480px) {
     .container {
+        margin: 12px auto;
+        padding: 12px;
+    }
+
+    .card {
         padding: 20px 12px;
     }
 
-    .gallery {
-        gap: 9px;
-    }
-
-    .photo-card {
-        padding: 5px;
+    h1 {
+        font-size: 1.8rem;
     }
 
     .photo-card img {
-        height: 155px;
+        height: 170px;
     }
 
-    .photo-caption {
-        font-size: 12px;
-    }
-
-    p {
-        font-size: 15px;
+    .caption {
+        font-size: 0.85rem;
     }
 }
 </style>
@@ -218,211 +191,191 @@ footer {
 <body>
 
 <div class="container">
+<div class="card">
 
-    <div class="heart">❤️</div>
+    <div class="heart">❤️ 🎂 ❤️</div>
 
-    <h1>Happy Birthday Chidu Anna! 🎂</h1>
+    <h1>Happy Birthday, Chidu Anna!</h1>
 
-    <p>
-        To my favourite person, my non-blood brother,
-        and one of the most special people in my life. ❤️
+    <p class="subtitle">
+        To my non-blood brother, my protector, my happiness
+        and one of the most special people in my life. 💖
     </p>
 
-    <h2>📸 Our Beautiful Memories 📸</h2>
+    <div class="music-section">
+        <h2>🎵 Your Special Song</h2>
+        <p>
+            This song is for you, Anna! ❤️<br>
+            Tap the button below to find and play
+            <strong>Nin Edurali Nanu</strong>.
+        </p>
 
-    <p>
-        Six photos, countless memories, and one special bond
-        that will always remain close to my heart. 🫂
-    </p>
+        <a
+            class="music-button"
+            href="https://www.youtube.com/results?search_query=Nin+Edurali+Nanu+Kannada+song"
+            target="_blank"
+            rel="noopener noreferrer">
+            ▶ Play Nin Edurali Nanu
+        </a>
+    </div>
+
+    <h2>📸 Our Special Memories</h2>
 
     <div class="gallery">
 
         <div class="photo-card">
             <img src="1787974104652.jpg"
-                 alt="Memory 1">
-            <p class="photo-caption">A special memory ❤️</p>
+                 alt="Memory photo 1">
+            <p class="caption">A memory to treasure ❤️</p>
         </div>
 
         <div class="photo-card">
             <img src="IMG-20260215-WA0017.jpg"
-                 alt="Memory 2">
-            <p class="photo-caption">Forever special 🫂</p>
+                 alt="Memory photo 2">
+            <p class="caption">My favourite person 🥰</p>
         </div>
 
         <div class="photo-card">
             <img src="IMG_20260526_212258_699.jpg"
-                 alt="Memory 3">
-            <p class="photo-caption">Our happy moments 💗</p>
+                 alt="Memory photo 3">
+            <p class="caption">Our beautiful memories 💕</p>
         </div>
 
         <div class="photo-card">
             <img src="IMG_20260828_195236.jpg"
-                 alt="Memory 4">
-            <p class="photo-caption">Memories to treasure ✨</p>
+                 alt="Memory photo 4">
+            <p class="caption">Always special to me 🤗</p>
         </div>
 
         <div class="photo-card">
             <img src="IMG_20260829_135712.png"
-                 alt="Memory 5">
-            <p class="photo-caption">My favourite brother ❤️</p>
+                 alt="Memory photo 5">
+            <p class="caption">A bond from the heart 💖</p>
         </div>
 
         <div class="photo-card">
             <img src="IMG_20261008_115047.png"
-                 alt="Memory 6">
-            <p class="photo-caption">Always my Anna 💖</p>
+                 alt="Memory photo 6">
+            <p class="caption">Forever my Chidu Anna ❤️</p>
         </div>
 
     </div>
 
-    <h2>💌 A Message From My Heart 💌</h2>
+    <h2>💌 A Message From My Heart</h2>
 
-    <p>
-        Chidu Anna, you came into my life as a friend,
-        but you became someone I can proudly call my brother.
-        We may not share the same blood, but the bond we share
-        is genuinely special to me.
-    </p>
+    <div class="message">
+        Happy Birthday, Chidu Anna! ❤️🎂
 
-    <p>
-        I want to keep teasing you, fighting with you over silly
-        things, making you angry sometimes, and creating memories
-        that we will laugh about in the future. Even our little
-        arguments are part of what makes our bond unique.
-    </p>
+        <br><br>
 
-    <p>
-        Thank you for being someone I can call my brother.
-        I wish you good health, happiness, success, peace,
-        and everything beautiful that life can offer you.
-    </p>
+        You may not be my brother by blood, but you are
+        my brother by heart, and that bond means so much
+        to me. I feel lucky to have someone like you in
+        my life. Thank you for treating me like your own
+        little sister and making me feel loved and cared for.
 
-    <p>
-        No matter where life takes us, you will always have
-        a special place in my heart. Happy Birthday, Anna!
-        Keep smiling and keep shining. ❤️🫂
-    </p>
+        <br><br>
 
-    <!-- YOUTUBE MUSIC PLAYER: NO MP3 UPLOAD REQUIRED -->
+        You are someone I can tease, fight with, annoy,
+        and still love endlessly. No matter how many times
+        we argue or how angry I make you, you will always
+        have a special place in my heart. 🥹❤️
 
-    <h2>🎵 A Song Just for You 🎵</h2>
+        <br><br>
 
-    <div class="music-box">
+        On your birthday, I wish you endless happiness,
+        good health, success, peace, and all the beautiful
+        things you deserve. May every dream you have come
+        true, and may you always have reasons to smile.
 
-        <p>
-            Some feelings are better expressed through music.
-            This song is dedicated to you, Chidu Anna. ❤️
-        </p>
+        <br><br>
 
-        <div class="video-container">
+        Life may change, situations may change, but I hope
+        our brother-sister bond always stays the same.
+        Thank you for being my brother, my support, and
+        such a precious part of my life.
 
-            <iframe
-                src="https://www.youtube.com/embed/GYdVZ83P2lI"
-                title="Nin Edurali Naanu - Roberrt"
-                allow="accelerometer; autoplay; clipboard-write;
-                       encrypted-media; gyroscope; picture-in-picture;
-                       web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-            </iframe>
+        <br><br>
 
-        </div>
-
-        <p>
-            Listen to this song and remember how special
-            you are to me. ❤️🎶
-        </p>
-
+        <strong>
+            Happy Birthday once again, Chidu Anna!
+            Love you so much! ❤️🫂
+        </strong>
     </div>
 
-    <h2>🎁 One More Surprise 🎁</h2>
+    <h2>🎁 One Little Surprise</h2>
 
     <p>
-        Anna, I have one more little message for you.
-        Tap the button to read it. 🥹❤️
+        Anna, there is one more message waiting just for you!
     </p>
 
-    <button onclick="showMessage()">
-        Open Your Surprise 💌
+    <button class="surprise-button" onclick="showSurprise()">
+        Open Your Surprise ❤️
     </button>
 
-    <div class="message-box" id="surpriseMessage">
+    <div id="surprise">
+        <h2>To My Forever Brother 🫂❤️</h2>
 
-        <h2>Dear Chidu Anna 🫂</h2>
+        No matter how much I tease you, fight with you,
+        or make you angry, please remember one thing:
+        you are very precious to me.
 
-        <p>
-            You are not my brother by blood, but you are
-            my brother by heart. That is what makes our
-            relationship so special to me.
-        </p>
+        <br><br>
 
-        <p>
-            I want us to keep laughing, teasing each other,
-            fighting over silly things, making up, and creating
-            beautiful memories for many more years.
-        </p>
+        I may not say it every day, but I am truly happy
+        to have you as my brother. I hope I can make you
+        proud and give you many reasons to smile, just as
+        you have made my life more special.
 
-        <p>
-            I may annoy you sometimes or make you angry,
-            but behind all that is a sister who genuinely
-            cares about you and wants to see you happy.
-        </p>
+        <br><br>
 
-        <p>
-            I hope all your dreams come true and that your
-            life is filled with happiness, peace, and success.
-            Always remember that you are special to me.
-        </p>
+        Stay happy, stay healthy, and never stop smiling.
+        This little website is just a small gift, but the
+        love behind it is huge.
 
-        <h2>Happy Birthday, Chidu Anna! 🎂❤️</h2>
+        <br><br>
 
-        <p>Forever your little sister. 🩷🫂</p>
-
+        <strong>Forever your little sister! ❤️🥹</strong>
     </div>
 
-    <div class="heart">💗</div>
+    <footer>
+        Made with lots of love by your little sister, Lahari ❤️
+        <br>
+        You will always be my Chidu Anna! 🫂
+    </footer>
 
 </div>
-
-<footer>
-    Made with endless love for Chidu Anna ❤️
-    <br>
-    A special birthday surprise from your little sister. 🫂
-</footer>
+</div>
 
 <script>
-function showMessage() {
-    const message = document.getElementById("surpriseMessage");
+function showSurprise() {
+    const surprise = document.getElementById("surprise");
 
-    message.classList.toggle("show");
-
-    if (message.classList.contains("show")) {
-        message.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
+    if (surprise.style.display === "block") {
+        surprise.style.display = "none";
+    } else {
+        surprise.style.display = "block";
     }
 }
 
 function createHeart() {
     const heart = document.createElement("div");
-
     heart.className = "floating-heart";
 
-    const hearts = ["❤️", "💕", "💗", "💖", "🩷"];
-
-    heart.textContent =
-        hearts[Math.floor(Math.random() * hearts.length)];
+    const hearts = ["❤️", "💕", "💖", "💗", "🥰"];
+    heart.textContent = hearts[
+        Math.floor(Math.random() * hearts.length)
+    ];
 
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration =
-        (5 + Math.random() * 4) + "s";
+    heart.style.fontSize = (16 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
 
     document.body.appendChild(heart);
 
     setTimeout(function() {
         heart.remove();
-    }, 9000);
+    }, 8000);
 }
 
 setInterval(createHeart, 700);

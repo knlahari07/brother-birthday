@@ -4,154 +4,251 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="theme-color" content="#ffe0eb">
 <title>Happy Birthday Chidu Anna ❤️</title>
 
 <style>
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    color: #63334b;
-    background: linear-gradient(135deg, #ffe0ec, #fff2d8, #f6ddff);
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
 }
 
-.container {
-    max-width: 850px;
-    margin: auto;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.88);
-    border-radius: 25px;
-    box-shadow: 0 8px 25px rgba(130, 55, 90, 0.15);
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #fff5f8;
+    color: #65263f;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 65px 18px;
 }
 
 h1 {
-    color: #d63384;
-    font-size: 34px;
+    font-size: clamp(2.4rem, 7vw, 4.2rem);
+    color: #d6336c;
+    margin: 20px 0;
 }
 
 h2 {
-    color: #b83280;
+    font-size: clamp(1.8rem, 5vw, 2.7rem);
+    color: #c2255c;
+    margin-bottom: 24px;
 }
 
 p {
-    line-height: 1.8;
-    font-size: 16px;
+    font-size: 1.05rem;
+    line-height: 1.9;
 }
 
-.subtitle {
-    font-size: 19px;
-    color: #8e4168;
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 20px;
+    background: linear-gradient(135deg, #ffe0eb, #ffc2d1, #fff0f5);
 }
 
-.photos {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    margin: 25px 0;
+.big-heart {
+    font-size: 75px;
+    animation: heartbeat 1.5s infinite;
 }
 
-.photos img {
-    display: block;
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 16px;
-    border: 3px solid white;
-    box-shadow: 0 4px 12px #e9bfd2;
-}
-
-.music-player {
-    width: 100%;
-    margin: 25px auto;
-    padding: 18px;
-    background: #fff0f6;
-    border-radius: 18px;
-}
-
-.music-player audio {
-    display: block;
-    width: 100%;
-    margin: 15px auto;
+.hero p {
+    max-width: 680px;
 }
 
 button {
-    padding: 13px 20px;
-    margin: 8px;
     border: none;
-    border-radius: 25px;
-    background: #e75480;
+    border-radius: 30px;
+    padding: 14px 24px;
+    margin: 15px 5px;
+    background: #d6336c;
     color: white;
-    font-size: 15px;
+    font-size: 1rem;
     cursor: pointer;
+    box-shadow: 0 5px 15px #d6336c30;
+    transition: transform .2s, background .2s;
 }
 
 button:hover {
-    background: #c83269;
+    background: #a61e4d;
+    transform: translateY(-2px);
 }
 
-.hidden {
-    display: none;
+button:focus-visible {
+    outline: 3px solid #65263f;
+    outline-offset: 4px;
 }
 
-.message {
-    margin-top: 25px;
-    padding: 20px;
-    background: #fff0f6;
-    border-radius: 18px;
+.message-section {
+    background: #fffafd;
+}
+
+.card {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 28px;
+    background: white;
+    border: 1px solid #ffd6e2;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px #a61e4d12;
+}
+
+.card p {
     text-align: left;
+    margin-bottom: 18px;
+}
+
+.gallery-section {
+    background: linear-gradient(135deg, #fff0f5, #ffe0eb);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 950px;
+    margin: 30px auto 0;
+}
+
+.photo-card {
+    background: white;
+    padding: 10px;
+    border-radius: 17px;
+    box-shadow: 0 5px 18px #a61e4d16;
+}
+
+.gallery img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #fffafd;
+}
+
+.song-section {
+    background: #fffafd;
+}
+
+.song-card {
+    max-width: 650px;
+    margin: auto;
+    padding: 28px;
+    background: white;
+    border: 1px solid #ffd6e2;
+    border-radius: 22px;
+}
+
+audio {
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.small-note {
+    font-size: .9rem;
+    color: #815064;
+}
+
+.surprise-section {
+    background: linear-gradient(135deg, #ffe0eb, #fff5f8);
+}
+
+.hidden-message {
+    display: none;
+    max-width: 750px;
+    margin: 25px auto;
+    padding: 25px;
+    background: white;
+    border: 1px solid #ffd6e2;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px #a61e4d15;
+    line-height: 1.9;
+    font-size: 1.08rem;
+}
+
+.hidden-message p {
+    margin-bottom: 15px;
+}
+
+.final-section {
+    background: linear-gradient(160deg, #fff0f5, #ffc2d1);
+}
+
+.final-card {
+    max-width: 850px;
+    margin: auto;
+    padding: 30px;
+    background: #ffffffed;
+    border-radius: 24px;
+    border: 1px solid #ffc2d1;
+    box-shadow: 0 8px 30px #a61e4d18;
+}
+
+.final-card p {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.final-signature {
+    color: #c2255c;
+    text-align: center !important;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 footer {
-    margin-top: 30px;
-    color: #b83280;
-    font-weight: bold;
+    background: #c2255c;
+    color: white;
+    padding: 25px 15px;
+    line-height: 1.9;
 }
 
-.heart {
+.floating-heart {
     position: fixed;
-    bottom: -30px;
-    font-size: 24px;
-    animation: floatUp 5s linear forwards;
+    bottom: -40px;
     pointer-events: none;
-    z-index: 10;
+    z-index: 1000;
+    animation: float-up 4s linear forwards;
 }
 
-@keyframes floatUp {
-    from {
-        transform: translateY(0);
-        opacity: 1;
-    }
+@keyframes heartbeat {
+    50% { transform: scale(1.15); }
+}
+
+@keyframes float-up {
     to {
-        transform: translateY(-110vh);
+        transform: translateY(-110vh) rotate(25deg);
         opacity: 0;
     }
 }
 
-@media (max-width: 480px) {
-    body {
-        padding: 10px;
+@media (max-width: 600px) {
+    section {
+        padding: 48px 15px;
     }
 
-    .container {
-        padding: 15px;
+    .gallery {
+        grid-template-columns: 1fr;
     }
 
-    h1 {
-        font-size: 27px;
+    .gallery img {
+        height: 320px;
     }
 
-    .photos img {
-        height: 180px;
-    }
-
-    p {
-        font-size: 15px;
+    .card, .song-card, .final-card {
+        padding: 21px;
     }
 }
 </style>
@@ -159,209 +256,186 @@ footer {
 
 <body>
 
-<div class="container">
+<!-- BIRTHDAY INTRO -->
+<section class="hero" id="home">
+    <div class="big-heart">❤️</div>
 
-    <h1>🎂 Happy Birthday, Chidu Anna! ❤️</h1>
-
-    <p class="subtitle">
-        To my non-blood brother, but my brother by heart 🫂💗
-    </p>
+    <h1>Happy Birthday, Chidu Anna!</h1>
 
     <p>
-        Some relationships are not made by blood.
-        They are made by love, trust, care, and beautiful memories.
-        You are one of the most special people in my life. ❤️
+        Today is all about you, the person who became my brother
+        not by blood, but by heart. You deserve all the happiness
+        in the world. 🫂💗
     </p>
 
-    <h2>📸 Our Beautiful Memories</h2>
+    <button type="button" onclick="openSurprise()">
+        Open Your Birthday Surprise 🎁
+    </button>
 
-    <div class="photos">
-        <img src="1787974104652.jpg"
-             alt="Our memory 1">
+    <p>Made with lots of love, just for you. 💖</p>
+</section>
 
-        <img src="IMG-20260215-WA0017.jpg"
-             alt="Our memory 2">
+<!-- FIRST EMOTIONAL MESSAGE -->
+<section class="message-section" id="message">
+    <h2>A Message From My Heart 💌</h2>
 
-        <img src="IMG_20260828_195236.jpg"
-             alt="Our memory 3">
-
-        <img src="IMG_20260829_135712.png"
-             alt="Our memory 4">
-
-        <img src="IMG_20261008_115047.png"
-             alt="Our memory 5">
-
-        <img src="file_00000000cd548211af074169904a5c77.png"
-             alt="Our memory 6">
-    </div>
-
-    <div class="music-player">
-        <h2>🎵 A Special Song for You ❤️</h2>
+    <div class="card">
+        <p>Dear Chidu Anna ❤️,</p>
 
         <p>
-            A little song for someone who means so much to me. 🥹
+            Happy Birthday to one of the most special people in my life!
+            Life gave me many people, but giving me a brother like you
+            was one of its sweetest gifts. We may not share the same
+            blood, but we share a bond that is precious to me.
+        </p>
+
+        <p>
+            Thank you for treating me like your own sister, for caring
+            about me, and for giving me a place in your life. You may
+            sometimes see me fighting with you, teasing you, annoying
+            you, making you angry, or even making you cry. But that is
+            also one of the ways I show how comfortable I am with you.
+            Behind all those little fights is a sister who cares for
+            you more than she can explain.
+        </p>
+
+        <p>
+            I hope this birthday brings you peace, good health,
+            happiness, success, and countless reasons to smile.
+            I hope your hard work brings beautiful results and
+            every dream you carry slowly becomes reality.
+        </p>
+
+        <p>
+            Whatever happens in life, I hope you always remember
+            that you are important to me. I am so grateful that
+            our paths crossed and that I got to call you my Anna.
+        </p>
+
+        <p>
+            Happy Birthday, Chidu Anna! Keep smiling, keep shining,
+            and never stop being the wonderful person you are. ❤️
+        </p>
+    </div>
+</section>
+
+<!-- EXACTLY SIX ORIGINAL PHOTOS -->
+<section class="gallery-section" id="gallery">
+    <h2>Our Beautiful Memories 📸</h2>
+
+    <p>Six pictures, countless feelings, and memories I treasure. 💗</p>
+
+    <div class="gallery">
+        <div class="photo-card">
+            <img src="./1787974104652.jpg"
+                 alt="Our memory 1">
+        </div>
+
+        <div class="photo-card">
+            <img src="./IMG-20260215-WA0017.jpg"
+                 alt="Our memory 2">
+        </div>
+
+        <div class="photo-card">
+            <img src="./IMG_20260828_195236.jpg"
+                 alt="Our memory 3">
+        </div>
+
+        <div class="photo-card">
+            <img src="./IMG_20260829_135712.png"
+                 alt="Our memory 4">
+        </div>
+
+        <div class="photo-card">
+            <img src="./IMG_20261008_115047.png"
+                 alt="Our memory 5">
+        </div>
+
+        <div class="photo-card">
+            <img src="./file_00000000cd548211af074169904a5c77.png"
+                 alt="Our memory 6">
+        </div>
+    </div>
+</section>
+
+<!-- BIRTHDAY SONG -->
+<section class="song-section" id="song">
+    <h2>A Little Birthday Music 🎵</h2>
+
+    <div class="song-card">
+        <p>
+            Anna, take a little break, play the song, and enjoy
+            your special day. This moment is just for you. ❤️
         </p>
 
         <audio id="birthdayAudio"
                controls
                loop
-               autoplay
-               preload="auto"
-               playsinline>
-            <source
-                src="https://knlahari07.github.io/brother-birthday/song.mp3"
-                type="audio/mpeg">
+               preload="auto">
+            <source src="./song.mp3" type="audio/mpeg">
             Your browser does not support audio playback.
         </audio>
 
-        <p id="songStatus" aria-live="polite">
-            Your special song is ready 🎶❤️
-            Tap Play if it doesn't start automatically.
+        <p id="songStatus" class="small-note" aria-live="polite">
+            Tap Play to listen to your birthday song. 🎶
         </p>
     </div>
+</section>
 
-    <h2>💌 A Little Message for You</h2>
+<!-- FIRST SURPRISE BUTTON -->
+<section class="surprise-section" id="surprise">
+    <h2>Ready for One More Surprise? 🎁</h2>
 
-    <p>
-        Chidu Anna, you are not my brother by blood,
-        but the love and care you give me make you my real brother
-        in every way that matters. I am so lucky to have you in my life.
-    </p>
+    <p>Anna, there is something else I want you to read. ❤️</p>
 
-    <button onclick="showMessage()">
-        💗 Open Your Surprise
+    <button type="button" onclick="showBirthdayWish()">
+        Reveal Your Special Wish 💖
     </button>
 
-    <div id="surpriseMessage" class="message hidden">
-
-        <h2>🥹❤️ To My Dearest Chidu Anna</h2>
+    <div id="surpriseMessage"
+         class="hidden-message"
+         aria-live="polite">
+        <h2>My Wish for You 🎂</h2>
 
         <p>
-            Happy Birthday to the person who became my brother
-            without sharing the same blood! ❤️
+            I wish that you never lose the smile that makes your
+            world brighter. I wish you strength on difficult days,
+            peace when your mind feels tired, and happiness that
+            stays even after the celebrations are over.
         </p>
 
         <p>
-            Sometimes I wonder how I got so lucky to have someone
-            like you in my life. You treat me like your own sister,
-            care about me, and make me feel that I have someone
-            to turn to. That means more to me than I can explain.
+            May life give you countless reasons to be proud of
+            yourself. May your dreams come true one by one.
+            And may you always remember that someone out here
+            is wishing the very best for you.
         </p>
 
         <p>
-            You are not just someone I call Anna. You are someone
-            I can be silly with, fight with, annoy, make angry,
-            and still care about with all my heart. Even when I
-            trouble you or make you upset, it never changes how
-            special you are to me. 🫂❤️
+            Happy Birthday, my Chidu Anna! You are loved more
+            than these words can ever express. ❤️🫂
         </p>
 
-        <p>
-            I know I may not always express my feelings properly.
-            Sometimes I might act childish, argue over small things,
-            or make you worry. But behind all of that is a little
-            sister who genuinely loves you and never wants to lose
-            this beautiful bond we share.
-        </p>
-
-        <p>
-            On your birthday, I wish you endless happiness,
-            good health, success, peace, and all the beautiful
-            things your heart wishes for. May your hard work bring
-            you success, may your smile never disappear, and may
-            life give you countless reasons to be happy. ❤️
-        </p>
-
-        <p>
-            No matter how busy life gets or how much things change,
-            I hope our bond always stays the same. You will always
-            have a special place in my heart as my Chidu Anna.
-        </p>
-
-        <p>
-            Thank you for treating me like your own sister.
-            Thank you for being part of my life.
-            And thank you for being YOU. 🥹💗
-        </p>
-
-        <p>
-            <strong>
-                Happy Birthday, Chidu Anna!
-                I love you so much, my favourite brother. ❤️🫂
-            </strong>
-        </p>
-
+        <button type="button" onclick="goToFinalMessage()">
+            Read My Last Message to You 💌
+        </button>
     </div>
+</section>
 
-    <button onclick="sendHearts()">
-        💕 Send Some Love
-    </button>
+<!-- LONG EMOTIONAL ENDING: THE LAST MAIN SECTION -->
+<section class="final-section" id="finalMessage">
+    <h2>To My Brother by Heart, Chidu Anna ❤️</h2>
 
-    <footer>
-        Made with endless love by your little sister ❤️
-        <br>
-        Forever your sister, no matter what. 🫂
-    </footer>
+    <div class="final-card">
+        <p>Dear Anna,</p>
 
-</div>
-
-<script>
-const birthdayAudio = document.getElementById("birthdayAudio");
-const songStatus = document.getElementById("songStatus");
-
-birthdayAudio.addEventListener("playing", function () {
-    songStatus.textContent = "Playing your special song 🎶❤️";
-});
-
-birthdayAudio.addEventListener("pause", function () {
-    songStatus.textContent = "Tap Play whenever you want to listen again 🎵";
-});
-
-birthdayAudio.addEventListener("error", function () {
-    songStatus.textContent =
-        "The song couldn't load. Please check your internet connection.";
-});
-
-function showMessage() {
-    const message = document.getElementById("surpriseMessage");
-
-    message.classList.toggle("hidden");
-
-    if (!message.classList.contains("hidden")) {
-        message.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-        sendHearts();
-    }
-}
-
-function sendHearts() {
-    const emojis = ["❤️", "💗", "💕", "🫂", "💖", "🥹"];
-
-    for (let i = 0; i < 18; i++) {
-        const heart = document.createElement("div");
-
-        heart.className = "heart";
-        heart.textContent =
-            emojis[Math.floor(Math.random() * emojis.length)];
-
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration =
-            (3 + Math.random() * 3) + "s";
-
-        document.body.appendChild(heart);
-
-        setTimeout(function () {
-            heart.remove();
-        }, 6000);
-    }
-}
-</script>
-
-</body>
-</html>
-erson becomes family.
+        <p>
+            As you celebrate another year of your life, there is
+            something I want you to know from the bottom of my heart.
+            You may not be my brother by blood, but the place you
+            have in my life is real, meaningful, and irreplaceable.
+            Sometimes life brings someone into our world unexpectedly,
+            and without even realizing it, that person becomes family.
             That is what you have become to me.
         </p>
 
@@ -451,7 +525,8 @@ erson becomes family.
         </p>
 
         <button type="button" onclick="sendHearts()">
-        
+            One Last Hug from Me 🫂❤️
+        </button>
     </div>
 </section>
 
